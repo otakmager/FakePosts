@@ -7,7 +7,7 @@ import dagger.hilt.components.SingletonComponent
 
 @EntryPoint
 @InstallIn(SingletonComponent::class)
-interface MapsModuleDependencies {
+interface FavoriteModuleDependencies {
 
     fun postsUseCase(): PostsUseCase
 }

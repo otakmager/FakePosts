@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -55,9 +54,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             R.id.nav_favorite -> {
-                Toast.makeText(this@MainActivity, "Coming soon", Toast.LENGTH_SHORT).show()
-//                val uri = Uri.parse("tourismapp://favorite")
-//                startActivity(Intent(Intent.ACTION_VIEW, uri))
+                val uri = Uri.parse("fakeposts://favorite")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
         if (fragment != null) {
