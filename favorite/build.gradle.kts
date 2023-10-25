@@ -1,10 +1,15 @@
 plugins {
     id("com.android.dynamic-feature")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
+
+apply("../shared_dependencies.gradle")
+
 android {
     namespace = "com.otakmager.favorite"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 21
@@ -20,13 +25,25 @@ android {
             )
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(project(":app"))
-    implementation("androidx.core:core-ktx:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.annotation:annotation:1.6.0")
 }
