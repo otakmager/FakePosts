@@ -49,8 +49,14 @@ dependencies {
 
     //room
     api("androidx.room:room-runtime:2.6.0")
+    api("androidx.room:room-ktx:2.6.0")
     kapt("androidx.room:room-compiler:2.6.0")
+    implementation("androidx.room:room-ktx:2.6.0")
     androidTestImplementation("androidx.room:room-testing:2.6.0")
+
+    //Database encryption
+    implementation("net.zetetic:android-database-sqlcipher:4.4.0")
+    implementation("androidx.sqlite:sqlite-ktx:2.4.0")
 
     //retrofit
     api("com.squareup.retrofit2:retrofit:2.9.0")
@@ -60,7 +66,6 @@ dependencies {
     //coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
-    implementation("androidx.room:room-ktx:2.6.0")
 
     //coroutine support
     api("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
