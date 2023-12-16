@@ -18,7 +18,7 @@ class NetworkModule {
 
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
-        val hostname = "https://jsonplaceholder.typicode.com"
+        val hostname = "jsonplaceholder.typicode.com"
         val certificatePinner = CertificatePinner.Builder()
             .add(hostname, "sha256/JCmeBpzLgXemYfoqqEoVJlU/givddwcfIXpwyaBk52I=")
             .add(hostname, "sha256/81Wf12bcLlFHQAfJluxnzZ6Frg+oJ9PWY/Wrwur8viQ=")
