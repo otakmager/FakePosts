@@ -11,5 +11,5 @@ data class DetailPostsResponse(
     val title: String,
 
     @field:SerializedName("body")
-    val body: String,
+    val body: String
 )

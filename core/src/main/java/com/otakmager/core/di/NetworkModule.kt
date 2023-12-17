@@ -1,5 +1,6 @@
 package com.otakmager.core.di
 
+import com.google.gson.GsonBuilder
 import com.otakmager.core.data.remote.network.ApiService
 import dagger.Module
 import dagger.Provides
@@ -34,9 +35,12 @@ class NetworkModule {
 
     @Provides
     fun provideApiService(client: OkHttpClient): ApiService {
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
         return retrofit.create(ApiService::class.java)
