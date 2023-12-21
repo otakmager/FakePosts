@@ -1,5 +1,6 @@
 package com.otakmager.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.ListViewHolder>() {
     private var listData = ArrayList<Posts>()
     var onItemClick: ((Posts) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(newListData: List<Posts>?) {
         if (newListData == null) return
         listData.clear()

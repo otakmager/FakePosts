@@ -7,7 +7,7 @@
 
     <style name="Theme.FakePosts" parent="Base.Theme.FakePosts" />
 
-    <style name="Theme.FakePosts.NoActionBar">
+    <style name="Theme.FakePosts.NoActionBar" tools:keep="@style/Theme_FakePosts_NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
