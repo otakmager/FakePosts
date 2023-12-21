@@ -57,6 +57,7 @@ dependencies {
     //room
     api("androidx.room:room-runtime:2.6.0")
     api("androidx.room:room-ktx:2.6.0")
+    //noinspection KaptUsageInsteadOfKsp
     kapt("androidx.room:room-compiler:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
     androidTestImplementation("androidx.room:room-testing:2.6.0")
